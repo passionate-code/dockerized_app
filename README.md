@@ -6,21 +6,25 @@ Note: Commands to execute in CLI of Cent OS. For other operating systems, there 
 
 # Set up Docker #
 
-sudo yum check-update // update yum
-curl -fsSL https://get.docker.com/ | sh // download docker
-sudo systemctl start docker // start docker
-sudo systemctl enable docker // enable docker
+sudo yum check-update # update yum
+
+curl -fsSL https://get.docker.com/ | sh # download docker
+
+sudo systemctl start docker # start docker
+
+sudo systemctl enable docker # enable docker
 
 # Run Docker composer #
 
-docker compose up --build -d   // start all services as defined in docker-compose.yml configuration file
+docker compose up --build -d   # start all services as defined in docker-compose.yml configuration file
 
 # Services in docker-compose.yml #
 
 1) backend_expressjs
 The backend service will be build using configuration in api/Dockerfile. The service can be accessed using this link after it is started: http://localhost:9000
 
-2) mongo
+2) frontend_reactjs
+The backend service will be build using configuration in client/Dockerfile. The service can be accessed using this link after it is started: http://localhost:3000
 
 ### Demo ###
 
