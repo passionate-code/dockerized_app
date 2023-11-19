@@ -1,4 +1,4 @@
-### General overview ###
+# General overview #
 
 The web application that periodically make a request to websites to check for its activity has been developed. The application was containerized using Docker techonology to ensure portability. The back-end of the application was developed using Node JS that links to MongoDB that stored documents that contain data associated with the websites that were monitored. Cron job was used to periodically checked those websites activity and the data from retrieved responses were stored as documents in MongoDB. The front-end of the application was developed using React JS that periodically makes an API call to the back-end to receive updated data regarding the websites that were being monitored.
 
