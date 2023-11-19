@@ -1,7 +1,8 @@
 ### General overview ###
 
-The mini AI-based chatbot system was developed using Django for its back-end process. PostgreSQL is the relational database that has been used to make the table for mini product recommender dataset. The front-end was developed using HTML, CSS, Javascript, jQuery and Bootstrap+AdminLTE templates. I have decided to use transfer learning instead of generating the model using the dataset from scratch. The model that I have fine-tuned is BERT (Bidirectional Encoder Representations from Transformers) using the huggingface library. The mini product recommender dataset has been cleaned to handle missing values and tokenised. The fine-tuned model has been trained using the product descriptions from pre-processed  mini product recommender dataset. It is able to classify user query by returning the name of top three products that have the highest score (i.e. its product description similar to the user query). In the interface, there will be a form for users to submit their query. The form submission will be handled by jQuery ajax. Django will handle the ajax request and returned json response that contains prediction from the fine-tuned model. The response to user query will be displayed in the chatbot interface. The mini AI-based chatbot system could be accessed via this url:
-http://rinalab.org/django/chatmind/
+The web application that periodically make a request to websites to check for its activity has been developed. The application was containerized using Docker techonology to ensure portability. The back-end of the application was developed using Node JS that links to MongoDB that stored documents that contain data associated with the websites that were monitored. Cron job was used to periodically checked those websites activity and the data from retrieved responses were stored as documents in MongoDB. The front-end of the application was developed using React JS that periodically makes an API call to the back-end to receive updated data regarding the websites that were being monitored.
+
+# Set up Docker
 
 # Dependencies #
 
