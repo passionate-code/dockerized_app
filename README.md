@@ -21,16 +21,20 @@ docker compose up --build -d   # start all services as defined in docker-compose
 # Services in docker-compose.yml #
 
 1) backend_expressjs
-The back-end service (Node JS) will be build using configuration in ./api/Dockerfile. The service can be accessed using this link after it is started: http://localhost:9000
+The back-end service (Node JS) will be build using configuration in ./api/Dockerfile and docker-compose.yml. The service can be accessed using this link after it is started: http://localhost:9000
 
 2) frontend_reactjs
-The front-end service (React JS) will be build using configuration in ./client/Dockerfile. The service can be accessed using this link after it is started: http://localhost:3000
+The front-end service (React JS) will be build using configuration in ./client/Dockerfile and docker-compose.yml. The service can be accessed using this link after it is started: http://localhost:3000
 
 3) mongo
-The database service (MongoDB) will be build using configuration in Dockerfile.
+The database service (MongoDB) will be build using configuration in Dockerfile and docker-compose.yml.
 
 4) mongo-express
 The UI for mongoDB will be build using configuration in docker-compose.yml. The service can be accessed using this link after it is started: http://localhost:8081
+
+# Initialised MongoDB #
+
+The mongo-init.js was used to initialise a database called mindswiss and create collection called sites in that db. The sites collection is then prepopulated with documents that contain data about websites that will be monitored such as name, url, date updated and status code attributes.
 
 ### Demo ###
 
