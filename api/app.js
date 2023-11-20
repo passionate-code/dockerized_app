@@ -17,21 +17,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// define express method use
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use("/testAPI", testAPIRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
-var {SitesModel} = require('./create_mongo_db.js'); //import sitesmodel stored in mongodb
-var {names_urls} = require('./check_sites.js'); //import promise array names_urls
-var {check_sites_scheduler} = require('./cron_task.js'); //import promise array names_urls
-check_sites_scheduler(names_urls,SitesModel); // execute check_sites_scheduler to execute cron job that update mongodb database of sites
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -43,5 +34,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// execute cron-node to perform scheduled cron job to check sites
+var {SitesModel} = require('./create_mongo_db.js'); //import sitesmodel stored in mongodb
+var {names_urls} = require('./check_sites.js'); //import promise array names_urls
+var {check_sites_scheduler} = require('./cron_task.js'); //import promise array names_urls
+check_sites_scheduler(names_urls,SitesModel); // execute check_sites_scheduler to execute cron job that update mongodb database of sites
 
 module.exports = app;

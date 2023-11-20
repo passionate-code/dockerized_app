@@ -39,6 +39,7 @@ The mongo-init.js was used to initialise a database called mindswiss and create 
 # Express JS #
 
 File ./api/bin/www set the http server for Express JS app.
+File ./api/app.js define router, view engine, error handler for Express JS app. It also executes cron-node to perform scheduled cron job to monitor websites.
 
 
 
