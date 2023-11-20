@@ -14,7 +14,7 @@ RUN npm install
 # Copy the rest of the code in the container
 COPY . .
 
-# Run the node server with server.js file
+# Run the express app
 CMD ["npm", "start"]
 
 # Expose the service over PORT 3000
