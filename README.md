@@ -71,7 +71,7 @@ The following explain the roles of the following files in the application:
 
 ## ./views ##
 
-1) Stored templates for Jade template engine. However, it is unused in this application as its using React JS to render the front-end page
+1) Stored templates for Jade template engine. However, it is unused in this application as its using React JS to render the front-end page and backend is there to serve the api call from the front-end
 
 # React JS #
 
