@@ -73,9 +73,9 @@ The following explain the roles of the following files in the application:
 
 1) Stored templates for Jade template engine. However, it is unused in this application as its using React JS to render the front-end page
 
+# React JS #
 
-
-
+The following explain the roles of the following files in the application:
 
 
 
