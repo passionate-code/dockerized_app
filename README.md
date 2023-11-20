@@ -73,10 +73,36 @@ The following explain the roles of the following files in the application:
 
 1) Stored templates for Jade template engine. However, it is unused in this application as its using React JS to render the front-end page and backend is there to serve the api call from the front-end
 
+
+# To generate client directory #
+
+yum install nodejs # install node
+
+yum install npm # install npm
+
+npx create-react-app client # generate react app
+
 # React JS #
 
 The following explain the roles of the following files in the application:
 
+## ./client/package.json ##
+
+1) Define script to run for npm start command
+2) List out dependecies for React JS application
+3) Copy this file to client directory
+
+## ./client/src/App.js ##
+
+1) It utilises React functional component and axios to make an API call to the Node JS backend. The data retrieved will be rendered by the React functional component
+2) The setInterval method is used to periodically make an API call to the backend for every minute so that updated data regarding the monitored websites inside MongoDB could retrieved and displayed by React JS
+3) Please change the ip address of the url variable (line 7 of App.js) to the host ip address that run the application
+4) Copy src directory to client directory
+
+## ./client/Docker ##
+
+1) Contain configuration to build the services inside Docker container
+2) Copy this file to client directory
 
 
 
