@@ -38,19 +38,44 @@ The mongo-init.js was used to initialise a database called mindswiss and create 
 
 # Express JS #
 
-File ./api/bin/www set the http server for Express JS app.
-File ./api/app.js define router, view engine, error handler for Express JS app. It also executes cron-node to perform scheduled cron job to monitor websites.
+The following explain the roles of the following files in the application:
+
+## ./api/bin/www ##
+
+1) Set the http server for Express JS app.
+
+## ./api/app.js ##
+
+1) Define router, view engine, error handler for Express JS app.
+2) It also executes cron-node to perform scheduled cron job to monitor websites and saved the result to MongoDB database.
+
+## ./api/create_mongo_db.js ##
+
+1) It utilises moongose module to make connection to MongoDB database mindswiss
+2) Define the schema for Sites model/collection inside mindswiss database
+
+## ./api/check_sites.js ##
+
+1) It utilises moongose module and define asynchronous function to get url of websites to monitor from MongoDB
+2) It utilises axios module and define asynchronous function to make a request and check the websites responses to monitor its activity
+
+## ./api/cron_task.js ##
+
+1) It utilises moongose module and define asynchronous function to update the documents inside sites collection of MongoDB with status code of monitored websites
+2) It utilises node-cron module and define a function to perform scheduled task to get realtime status of monitored websites and update the MongoDB database with the retrieved data
+
+## ./api/package.json ##
+
+1) Define script to run for npm start command
+2) List out dependecies for Node JS application
+
+## ./views ##
+
+1) Stored templates for Jade template engine. However, it is unused in this application as its using React JS to render the front-end page
 
 
 
 
-### Demo ###
-
-1. Go to url: http://rinalab.org/django/chatmind/
-2. Enter a query inside the text box and hit submit to fetch real time chatbot response
-3. User query and chatbot response will be displayed inside the right panel
-4. The left panels will show details pulled from the database for top three products that matched user query
-5. Refer Figure 1 for example demo
 
 
 
