@@ -17,5 +17,5 @@ COPY . .
 # Run the express app
 CMD ["npm", "start"]
 
-# Expose the service over PORT 3000
+# Expose the service over PORT 9000
 EXPOSE 9000
