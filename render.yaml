@@ -2,3 +2,5 @@ services:
   - type: web
     name: nodejs
     runtime: docker
+    dockerfilePath: ./api/Dockerfile
+
