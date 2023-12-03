@@ -2,4 +2,5 @@ services:
   - type: web
     name: nodejs
     runtime: docker
-    rootDir: api
+    repo: https://github.com/passionate-code/mindswiss
+    dockerfilePath: ./api/Dockerfile 
