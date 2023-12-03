@@ -3,9 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bp = require("body-parser");
 var cors = require("cors");
+const { open } = require("sqlite");
+const sqlite3 = require("sqlite3");
+const bcrypt = require("bcrypt");
+
+
 // define router
 var indexRouter = require('./routes/index');
+
 
 // view engine setup
 var app = express();
